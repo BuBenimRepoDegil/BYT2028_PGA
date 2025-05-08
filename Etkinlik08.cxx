@@ -5,7 +5,7 @@ int main() {
     bool stupid = true;
     string x, y;
     int z;
-    vector<tuple<string, int, string>> n;
+    vector<pair<pair<string, int>, string>> n;
 
     setlocale(LC_ALL, "tr_TR.UTF-8");
     cout << "Öğrenci Kaydı" << endl;
@@ -19,15 +19,14 @@ int main() {
         cout << "\nAdınız ve Soyadınız: ";
         cin.ignore();
         getline(cin, y);
-        n.emplace_back(x, z, y);
+        n.emplace_back(make_pair(x, z), y);
     }
-
 
     sort(n.begin(), n.end());
 
     cout << "-------\nSınıf Listesi\n-------\n";
     for (auto& i : n) {
-        cout << get<0>(i) << " - " << get<1>(i) << " " << get<2>(i) << "\n";
+        cout << i.first.first << " - " << i.first.second << " " << i.second << "\n";
     }
 
     return 0;

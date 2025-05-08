@@ -19,7 +19,7 @@ while stupidWorkaround:
             print("Hatalı giriş! Tekrar dene.")
         else:
             wa1 = false
-        if x != "bos":
+        if x != "boş":
             sl.append(x)
         else: 
             stupidWorkaround = false

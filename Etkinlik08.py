@@ -1,8 +1,6 @@
 true = True
 false = False
 
-
-
 stupidWorkaround = true
 testClause = true
 sl = []
@@ -45,8 +43,11 @@ while stupidWorkaround:
             else:
                 wa1 = false
             al.append(x)
+
+    data = sorted(zip(sl, nl, al))
+    sl, nl, al = zip(*data) if data else ([], [], [])
+
     m="Sınıf Listesi"
     print(len(m)*"-","\n",m,"\n",len(m)*"-","\n",sep="",end="")
     for i in range(len(al)):
         print(nl[i]," ",sl[i]," - ",al[i],sep="")
-        
